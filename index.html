@@ -1,0 +1,178 @@
+<div id="straightLineApp">
+
+  <div class="tool-bar">
+    <label class="grid-toggle">
+      <input id="gridToggle" type="checkbox" checked>
+      <span>Show Grid Layout</span>
+    </label>
+
+    <button id="lineTool" class="tool-button active">
+      Line
+    </button>
+
+    <button id="freeDrawTool" class="tool-button">
+      Free Draw
+    </button>
+
+    <button id="eraserTool" class="tool-button">
+      Eraser
+    </button>
+
+    <button id="downloadButton" class="tool-button download">
+      Download PNG
+    </button>
+  </div>
+
+  <div
+    id="drawingArea"
+    class="drawing-area"
+    tabindex="0"
+    aria-label="Scrollable drawing area"
+  >
+    <canvas id="lineCanvas" width="2400" height="3200"></canvas>
+  </div>
+
+  <div id="lineStatus">
+    Line tool selected — click and drag to create a straight line
+  </div>
+
+  <!-- START: GOOGLE ADSENSE CODE SLOT -->
+  <div class="app-ad-container">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9973236774766110" crossorigin="anonymous"></script>
+    <!-- Responsive Display Ad Unit -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9973236774766110"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <!-- END: GOOGLE ADSENSE CODE SLOT -->
+
+</div>
+
+<style>
+  #straightLineApp {
+    width: 100%;
+    min-height: 600px;
+    background: #ffffff;
+    color: #34404a;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+
+  #straightLineApp *,
+  #straightLineApp *::before,
+  #straightLineApp *::after {
+    box-sizing: border-box;
+  }
+
+  .tool-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #ffffff;
+    border-bottom: 1px solid #e3e7ea;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 2;
+  }
+
+  .grid-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .grid-toggle input {
+    margin: 0;
+    accent-color: #1769d1;
+    cursor: pointer;
+  }
+
+  .tool-button {
+    padding: 7px 14px;
+    border: 1px solid #cbd4db;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #34404a;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .tool-button:hover {
+    background: #edf2f5;
+  }
+
+  .tool-button.active {
+    background: #1769d1;
+    border-color: #1769d1;
+    color: #ffffff;
+  }
+
+  .tool-button.download {
+    border-color: #1769d1;
+    color: #1769d1;
+  }
+
+  .drawing-area {
+    width: 100%;
+    height: 600px;
+    overflow: auto;
+    background: #f4f6f8;
+    outline: none;
+    cursor: crosshair;
+    user-select: none;
+    overscroll-behavior: contain;
+  }
+
+  .drawing-area:focus {
+    box-shadow: inset 0 0 0 2px rgba(23, 105, 209, 0.2);
+  }
+
+  #lineCanvas {
+    display: block;
+    width: 2400px;
+    height: 3200px;
+    background: #ffffff;
+    cursor: crosshair;
+    touch-action: none;
+  }
+
+  #lineStatus {
+    min-height: 20px;
+    padding: 8px 12px;
+    color: #7a858d;
+    font-size: 11px;
+    text-align: center;
+    border-top: 1px solid #e3e7ea;
+  }
+
+  /* Styling to cleanly separate the ad workspace */
+  .app-ad-container {
+    padding: 15px;
+    background: #f4f6f8;
+    border-top: 1px solid #e3e7ea;
+    text-align: center;
+    min-height: 100px;
+  }
+
+  @media (max-width: 600px) {
+    .tool-bar {
+      justify-content: flex-start;
+      overflow-x: auto;
+    }
+
+    .drawing-area {
+      height: 500px;
+    }
+  }
+</style>
